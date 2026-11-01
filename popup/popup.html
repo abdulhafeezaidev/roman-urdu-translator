@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roman Urdu Translator</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <header class="popup-header">
+      <h1 class="extension-title">Roman Urdu Translator</h1>
+      <p class="extension-desc">Translate English webpages into natural Pakistani Roman Urdu.</p>
+    </header>
+
+    <main class="popup-body">
+      <div class="toggle-card">
+        <div class="toggle-info">
+          <span class="toggle-title">⚡ Auto-Translate Pages</span>
+          <span class="toggle-subtitle" id="auto-translate-desc">Translate pages automatically</span>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="toggle-auto-translate">
+          <span class="slider round"></span>
+        </label>
+      </div>
+
+      <div class="actions">
+        <button id="btn-translate" class="btn btn-primary" type="button">Translate Page</button>
+        <button id="btn-cancel" class="btn btn-danger" type="button" style="display: none;">Cancel Translation</button>
+        <button id="btn-restore" class="btn btn-secondary" type="button">Restore Original</button>
+      </div>
+
+      <div class="status-card" id="status-card" role="region" aria-live="polite">
+        <div class="status-header">
+          <span class="status-dot" id="status-dot"></span>
+          <span class="status-label" id="status-label">Ready</span>
+        </div>
+        <div class="status-details" id="status-details">
+          Extension is ready to inspect the active webpage.
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

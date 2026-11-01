@@ -1,0 +1,24 @@
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Node dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.log
+
+# Production release builds
+release/
+*.zip
+
+# Server runtime state
+backend/.server.pid
+backend/.settings.json

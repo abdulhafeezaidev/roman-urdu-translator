@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Roman Urdu Translator — Phase 2 Test Page</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      max-width: 860px;
+      margin: 40px auto;
+      padding: 0 20px;
+      line-height: 1.6;
+      color: #1e293b;
+    }
+    .hidden-display-none { display: none; }
+    .hidden-visibility { visibility: hidden; }
+    pre {
+      background: #f1f5f9;
+      padding: 12px;
+      border-radius: 6px;
+      overflow-x: auto;
+      border: 1px solid #cbd5e1;
+    }
+    code {
+      background: #e2e8f0;
+      padding: 2px 4px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+    }
+    th, td {
+      border: 1px solid #cbd5e1;
+      padding: 8px 12px;
+      text-align: left;
+    }
+    th { background: #f8fafc; }
+    .form-group { margin-bottom: 12px; }
+  </style>
+</head>
+<body>
+  <!-- 1. Header & Article Section (Eligible) -->
+  <header>
+    <h1 id="heading-main">Getting Started with Technical Documentation</h1>
+    <p id="article-p1">
+      Welcome to the official developer guide. This guide explains how to integrate modern web components.
+    </p>
+  </header>
+
+  <!-- 2. Technical Documentation with Lists and Links (Eligible) -->
+  <section id="docs-section">
+    <h2>Core Prerequisites</h2>
+    <ul id="prereq-list">
+      <li id="prereq-1">Node.js version 18 or later installed on your system.</li>
+      <li id="prereq-2">A modern browser that supports Manifest V3 extensions.</li>
+      <li id="prereq-3">Basic understanding of asynchronous JavaScript.</li>
+    </ul>
+    <p id="docs-link-p">
+      For additional guidance, visit the <a href="https://developer.mozilla.org" id="link-mdn">MDN Web Docs</a> portal.
+    </p>
+  </section>
+
+  <!-- 3. Duplicate English Sentences in Different Elements (Duplicate Test) -->
+  <section id="duplicate-text-section">
+    <h2>Duplicate Text Test Section</h2>
+    <!-- Identical text "Click here to proceed" appears in two distinct DOM nodes -->
+    <p id="duplicate-p1">Click here to proceed.</p>
+    <div id="duplicate-p2">Click here to proceed.</div>
+    <!-- Identical button labels in different locations -->
+    <button type="button" id="btn-dup-1">Save Changes</button>
+    <button type="button" id="btn-dup-2">Save Changes</button>
+  </section>
+
+  <!-- 4. Table Section (Eligible) -->
+  <section id="table-section">
+    <h2>Configuration Options</h2>
+    <table id="config-table">
+      <thead>
+        <tr>
+          <th>Setting</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="table-cell-1">Batch Size</td>
+          <td id="table-cell-2">Maximum number of items processed per batch.</td>
+        </tr>
+        <tr>
+          <td id="table-cell-3">Timeout</td>
+          <td id="table-cell-4">Maximum waiting duration before request aborts.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 5. Code Blocks & Commands (MUST REMAIN COMPLETELY UNTOUCHED) -->
+  <section id="code-section">
+    <h2>Code Block Examples (Protected)</h2>
+    <pre id="code-pre-1"><code id="code-block-1">const translator = new RomanUrduTranslator();
+await translator.initialize();
+console.log("Ready");</code></pre>
+    <p id="command-desc">
+      Run the following terminal command: <code>npm run build --prod</code>
+    </p>
+  </section>
+
+  <!-- 6. Form Controls & Inputs (MUST REMAIN UNTOUCHED) -->
+  <section id="forms-section">
+    <h2>Settings Form (Protected Inputs)</h2>
+    <form id="sample-form">
+      <div class="form-group">
+        <label for="input-username" id="label-user">Username:</label>
+        <input type="text" id="input-username" value="developer_user" />
+      </div>
+      <div class="form-group">
+        <label for="textarea-bio" id="label-bio">Developer Bio:</label>
+        <textarea id="textarea-bio">Do not modify this user input text.</textarea>
+      </div>
+      <div class="form-group">
+        <select id="select-lang">
+          <option value="en" id="opt-en">English Option</option>
+          <option value="ur" id="opt-ur">Urdu Option</option>
+        </select>
+      </div>
+    </form>
+  </section>
+
+  <!-- 7. Hidden Elements (MUST REMAIN UNTOUCHED) -->
+  <section id="hidden-section">
+    <h2>Hidden Content (Protected)</h2>
+    <div id="hidden-display" class="hidden-display-none">Hidden via display none.</div>
+    <div id="hidden-visibility" class="hidden-visibility">Hidden via visibility hidden.</div>
+    <div id="hidden-attribute" hidden>Hidden via hidden attribute.</div>
+  </section>
+
+  <!-- Phase 5 Translation, Dynamic Content & SPA Verification Panel -->
+  <div id="test-results-panel" style="margin-top: 40px; padding: 20px; background: #f8fafc; border: 2px solid #2563eb; border-radius: 8px;">
+    <h3 style="margin-top: 0; color: #1e3a8a;">Phase 5: Real-World Documentation Compatibility & Quality</h3>
+    <p style="margin-top: 10px;">
+      <button type="button" id="btn-live-translate" style="background:#0284c7;color:white;border:none;padding:8px 16px;border-radius:4px;cursor:pointer;font-weight:bold;">1. Live In-Page Translate (In-Place)</button>
+      <button type="button" id="btn-cancel-test" style="background:#dc2626;color:white;border:none;padding:8px 16px;border-radius:4px;cursor:pointer;font-weight:bold;">2. Cancel In-Flight Translation</button>
+      <button type="button" id="btn-translate-again" style="background:#0369a1;color:white;border:none;padding:8px 16px;border-radius:4px;cursor:pointer;">3. Translate Again (Verify No Duplicate)</button>
+      <button type="button" id="btn-dynamic" style="background:#10b981;color:white;border:none;padding:8px 16px;border-radius:4px;cursor:pointer;">4. Insert Dynamic Content</button>
+      <button type="button" id="btn-spa" style="background:#8b5cf6;color:white;border:none;padding:8px 16px;border-radius:4px;cursor:pointer;">5. Simulate SPA Route</button>
+      <button type="button" id="btn-restore" style="background:#475569;color:white;border:none;padding:8px 16px;border-radius:4px;cursor:pointer;">6. Restore Original English</button>
+    </p>
+
+    <div id="large-docs-container" style="margin-top: 20px; border-top: 2px dashed #cbd5e1; padding-top: 15px;">
+      <h2>Comprehensive Developer Guide: Architecture & State Management</h2>
+      <p id="large-p1">Modern web architectures rely on decoupled services communicating via well-defined REST or GraphQL interfaces.</p>
+      <p id="large-p2">State management must ensure unidirectional data flow to maintain predictable application behavior across complex component trees.</p>
+      
+      <h3>Database Caching & Indexing Strategies</h3>
+      <p id="large-p3">Indexing heavily queried database columns reduces search query latency from linear scans to logarithmic lookups.</p>
+      <p id="large-p4">Distributed in-memory caches like Redis store serialized session tokens and frequently requested resource objects.</p>
+
+      <h3>Asynchronous Processing with Message Queues</h3>
+      <p id="large-p5">Background workers process compute-intensive tasks independently from the HTTP request-response cycle.</p>
+      <p id="large-p6">Dead letter queues capture unparseable messages for subsequent operational debugging and replay.</p>
+    </div>
+
+    <div id="status-indicator" style="margin-bottom: 12px; font-weight: 500; color: #475569;">
+      Status: Ready for Phase 5 testing.
+    </div>
+    <div id="dynamic-container" style="margin-bottom: 16px;"></div>
+    <pre id="test-output" style="background: white; padding: 12px; border-radius: 4px; border: 1px solid #cbd5e1; max-height: 350px; overflow-y: auto; font-size: 13px;"></pre>
+  </div>
+
+  <script src="../../utils/text-utils.js"></script>
+  <script>
+    let globalStore = new TextUtils.OriginalTextStore();
+    let globalNodeMap = new Map();
+
+    const output = document.getElementById('test-output');
+    const statusInd = document.getElementById('status-indicator');
+    const btnLive = document.getElementById('btn-live-translate');
+    const btnAgain = document.getElementById('btn-translate-again');
+    const btnDynamic = document.getElementById('btn-add-dynamic');
+    const btnSpa = document.getElementById('btn-spa-nav');
+    const btnRestore = document.getElementById('btn-restore');
+    const dynamicContainer = document.getElementById('dynamic-container');
+
+    window.addEventListener('DOMContentLoaded', () => {
+      statusInd.textContent = 'Status: Page loaded with Phase 5 controls. Ready for testing.';
+      output.textContent = 'Extension test harness ready.\nClick "Translate Page (Live Gemini)" to start.';
+    });
+
+    async function runLiveTranslation(isSecondPass = false) {
+      btnLive.disabled = true;
+      statusInd.textContent = isSecondPass
+        ? 'Status: Verifying duplicate translation prevention...'
+        : 'Status: Extracting DOM and calling Phase 5 Live Backend (Gemini 2.5 Flash)...';
+      output.textContent = isSecondPass
+        ? 'Running second translate pass to test duplicate translation prevention...\n'
+        : 'Connecting to http://localhost:3000/api/translate...\n';
+
+      try {
+        if (!isSecondPass) {
+          globalStore.restoreAll();
+          globalStore = new TextUtils.OriginalTextStore();
+        }
+
+        const operationId = 'live-op-' + Date.now();
+        const extraction = TextUtils.extractTranslationUnits(document.body, operationId, { store: globalStore });
+        const units = extraction.units;
+
+        if (units.length === 0) {
+          output.textContent += `Extracted 0 units! Duplicate prevention verified: already modified text nodes were safely skipped.\n`;
+          statusInd.textContent = 'Status: Duplicate translation prevented! No already-translated nodes were reprocessed.';
+          statusInd.style.color = '#0284c7';
+          return;
+        }
+
+        for (const unit of units) {
+          globalNodeMap.set(unit.id, unit);
+        }
+
+        const batches = TextUtils.createBatches(units, { operationId, maxItems: 15, maxCharacters: 1500 });
+        output.textContent += `Extracted ${units.length} translation units into ${batches.length} batch(es).\n`;
+
+        let totalApplied = 0;
+        let translationsSample = [];
+
+        for (let i = 0; i < batches.length; i++) {
+          const batch = batches[i];
+          output.textContent += `Translating batch ${i + 1}/${batches.length} (${batch.items.length} items)...\n`;
+
+          const response = await fetch('http://localhost:3000/api/translate', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              operationId: batch.operationId,
+              batchId: batch.batchId,
+              targetLanguage: 'roman-urdu',
+              items: batch.items
+            })
+          });
+
+          if (!response.ok) {
+            const errData = await response.json().catch(() => ({ error: { message: response.statusText } }));
+            throw new Error(`Backend error (${response.status}): ${errData.error?.message || response.statusText}`);
+          }
+
+          const data = await response.json();
+          for (const res of data.results) {
+            const applied = TextUtils.applyTranslationResult(res, globalNodeMap, globalStore);
+            if (applied.success) {
+              totalApplied++;
+              if (translationsSample.length < 5) {
+                translationsSample.push({ id: res.id, translatedText: res.translatedText });
+              }
+            }
+          }
+        }
+
+        const codeUntouched = document.getElementById('code-block-1')?.textContent.includes('const translator = new RomanUrduTranslator();') ?? true;
+        const commandUntouched = document.getElementById('command-desc')?.querySelector('code')?.textContent === 'npm run build --prod';
+        const inputUntouched = document.getElementById('input-username')?.value === 'developer_user';
+        const headingText = document.getElementById('heading-main')?.textContent || '';
+
+        const report = {
+          status: 'SUCCESS',
+          totalUnitsExtracted: units.length,
+          unitsAppliedToDom: totalApplied,
+          samples: translationsSample,
+          checks: {
+            headingTranslated: headingText !== 'Getting Started with Technical Documentation',
+            headingContent: headingText,
+            codeBlockPreserved: codeUntouched,
+            commandPreserved: commandUntouched,
+            inputUntouched: inputUntouched
+          }
+        };
+
+        output.textContent = JSON.stringify(report, null, 2);
+        statusInd.textContent = 'Status: Live Roman Urdu translation applied to DOM!';
+        statusInd.style.color = '#15803d';
+        window.__phase5Report = report;
+      } catch (err) {
+        output.textContent += `\n[ERROR]: ${err.message}\nMake sure backend is running on http://localhost:3000.`;
+        statusInd.textContent = `Status: Translation failed - ${err.message}`;
+        statusInd.style.color = '#b91c1c';
+      } finally {
+        btnLive.disabled = false;
+      }
+    }
+
+    function addDynamicSection() {
+      const sectionId = 'dyn-sec-' + Date.now();
+      const div = document.createElement('div');
+      div.id = sectionId;
+      div.style.padding = '12px';
+      div.style.marginTop = '10px';
+      div.style.background = '#ecfdf5';
+      div.style.border = '1px solid #6ee7b7';
+      div.style.borderRadius = '6px';
+      div.innerHTML = `
+        <h3 id="dyn-heading-${sectionId}">Dynamic Documentation Section: Webhook Event Listeners</h3>
+        <p id="dyn-p-${sectionId}">Webhooks deliver asynchronous event payloads directly to your backend server endpoint over HTTPS.</p>
+      `;
+      dynamicContainer.appendChild(div);
+      statusInd.textContent = 'Status: Inserted dynamic technical documentation section.';
+      statusInd.style.color = '#059669';
+      output.textContent += `\n[DYNAMIC CONTENT] Inserted section "${sectionId}". Ready to test incremental translation.\n`;
+    }
+
+    function simulateSpaNavigation() {
+      history.pushState({}, '', '#route-api-reference');
+      const docsSection = document.getElementById('docs-section');
+      if (docsSection) {
+        docsSection.innerHTML = `
+          <h2>API Reference: Authentication Endpoints (SPA Route)</h2>
+          <p id="spa-p1">The authentication service requires an API key header for all incoming HTTP requests.</p>
+          <p id="spa-p2">Generate tokens with scoped permissions to protect client credentials.</p>
+        `;
+      }
+      statusInd.textContent = 'Status: Simulated SPA navigation to #route-api-reference. Route changed.';
+      statusInd.style.color = '#7c3aed';
+      output.textContent += `\n[SPA NAVIGATION] Route switched to #route-api-reference. Stale node state reset.\n`;
+    }
+
+    const btnCancelTest = document.getElementById('btn-cancel-test');
+    let cancelRequested = false;
+
+    btnCancelTest.addEventListener('click', () => {
+      cancelRequested = true;
+      statusInd.textContent = 'Status: Cancellation requested...';
+      statusInd.style.color = '#dc2626';
+      output.textContent += '\n[USER ACTION] Cancel Translation clicked!\n';
+    });
+
+    btnLive.addEventListener('click', () => {
+      cancelRequested = false;
+      runLiveTranslation(false);
+    });
+    btnAgain.addEventListener('click', () => {
+      cancelRequested = false;
+      runLiveTranslation(true);
+    });
+    btnDynamic.addEventListener('click', addDynamicSection);
+    btnSpa.addEventListener('click', simulateSpaNavigation);
+    btnRestore.addEventListener('click', restoreDom);
+  </script>
+</body>
+</html>

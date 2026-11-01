@@ -1,0 +1,9 @@
+{
+  "name": "com.roman_urdu_translator.host",
+  "description": "Roman Urdu Translator Native Messaging Host (Auto Launcher)",
+  "path": "host-launcher.bat",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://lmngogijnmkchlfmghgiilmgdjonigbl/"
+  ]
+}

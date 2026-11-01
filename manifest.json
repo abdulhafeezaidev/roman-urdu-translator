@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Roman Urdu Translator",
+  "version": "1.0.0",
+  "description": "Translate English webpages into natural Pakistani Roman Urdu.",
+  "permissions": [
+    "activeTab",
+    "nativeMessaging"
+  ],
+  "host_permissions": [
+    "http://127.0.0.1/*",
+    "http://localhost/*"
+  ],
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzru24H6hqVHLynq5EgFOtc4oxsF8rd41s3C16enTY9DLL1rcktDzOZwfDrqHhpVlBWWY7cx9NbOsT+E/aLiG/x155vGVQN3isOA5UetfZRud4YIMZ0fpA//un/X9oqCnLfd4tC0Sr97Y2AkTDxN6iZmHuuJq5XrYTrR1axW0WDoWdQThmsEakmOOksP3t73AKwKhXwmDts9ehu2syB5hBqbFbogSWCqyCUsFhcpDxoTfQSEg62NKCVwKoeQwU62uvbRRBDCmYsDgqgC2MBCC3ePCo+8jKHhCBp+9/sW+jm143SIA2V45U5RZcdrPYwRVXTyI8bQeDK6MvxO0pU4ANwIDAQAB",
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Roman Urdu Translator"
+  },
+  "background": {
+    "service_worker": "background/service-worker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": [
+        "utils/text-utils.js",
+        "content/content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

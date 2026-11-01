@@ -1,0 +1,18 @@
+{
+  "name": "roman-urdu-translator-backend",
+  "version": "1.0.0",
+  "description": "Secure translation proxy backend for Roman Urdu Translator Chrome Extension",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node tests/backend.test.js && node tests/integration.test.js"
+  },
+  "keywords": [
+    "gemini",
+    "translation",
+    "proxy",
+    "chrome-extension"
+  ],
+  "author": "",
+  "license": "MIT"
+}
